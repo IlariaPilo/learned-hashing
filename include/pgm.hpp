@@ -55,7 +55,7 @@ struct PGMHash {
 
     const auto sample_size_ = std::distance(sample_begin, sample_end);
     scale_fac_ =
-        static_cast<double>(full_size) / static_cast<double>(sample_size_);
+        static_cast<double>(full_size-1) / static_cast<double>(sample_size_);
 
     pgm_ = decltype(pgm_)(sample_begin, sample_end);
     if (pgm_.segments.size() > MaxModels) {
